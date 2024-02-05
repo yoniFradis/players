@@ -1,4 +1,4 @@
-package com.hometask.playersgradle;
+package com.hometask.playersgradle.Repository;
 
 import com.hometask.playersgradle.model.Player;
 import org.springframework.data.mongodb.repository.MongoRepository;

@@ -1,7 +1,7 @@
-package com.hometask.playersgradle;
+package com.hometask.playersgradle.controller;
 
+import com.hometask.playersgradle.service.PlayerService;
 import com.hometask.playersgradle.model.Player;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,6 @@ public class PlayerController {
 
     private final PlayerService playerService;
 
-    @Autowired
     public PlayerController(PlayerService playerService) {
         this.playerService = playerService;
     }
