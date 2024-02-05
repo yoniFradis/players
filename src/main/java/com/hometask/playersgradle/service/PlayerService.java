@@ -1,7 +1,7 @@
-package com.hometask.playersgradle;
+package com.hometask.playersgradle.service;
 
+import com.hometask.playersgradle.Repository.PlayerRepository;
 import com.hometask.playersgradle.model.Player;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +11,6 @@ public class PlayerService {
 
     private final PlayerRepository playerRepository;
 
-    @Autowired
     public PlayerService(PlayerRepository playerRepository) {
         this.playerRepository = playerRepository;
     }
