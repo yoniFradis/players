@@ -28,11 +28,7 @@ public class CsvDataLoaderService {
     public void loadPlayersInBatches() {
         try (InputStreamReader reader = new InputStreamReader(new ClassPathResource(PLAYERS_SCV).getInputStream());
              BufferedReader bufferedReader = new BufferedReader(reader)) {
-
-            CsvToBean<Player> csvToBean = new CsvToBeanBuilder<Player>(bufferedReader)
-                    .withType(Player.class)
-                    .withIgnoreLeadingWhiteSpace(true)
-                    .build();
+            CsvToBean<Player> csvToBean = buildCsvToBean(bufferedReader);
 
             Iterator<Player> iterator = csvToBean.iterator();
             List<Player> batch = new ArrayList<>();
@@ -54,5 +50,12 @@ public class CsvDataLoaderService {
         } catch (Exception e) {
             throw new FailedToLoadCsvException(e.getMessage());
         }
+    }
+
+    private static CsvToBean<Player> buildCsvToBean(BufferedReader bufferedReader) {
+        return new CsvToBeanBuilder<Player>(bufferedReader)
+                .withType(Player.class)
+                .withIgnoreLeadingWhiteSpace(true)
+                .build();
     }
 }
