@@ -1,7 +1,7 @@
 package com.hometask.playersgradle.controller;
 
-import com.hometask.playersgradle.service.PlayerService;
 import com.hometask.playersgradle.model.Player;
+import com.hometask.playersgradle.service.PlayerService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
