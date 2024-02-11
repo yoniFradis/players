@@ -1,6 +1,6 @@
 package com.hometask.playersgradle.controller;
 
-import com.hometask.playersgradle.model.Player;
+import com.hometask.playersgradle.dto.PlayerDto;
 import com.hometask.playersgradle.service.PlayerService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,12 +20,12 @@ public class PlayerController {
     }
 
     @GetMapping
-    public List<Player> getAllPlayers() {
+    public List<PlayerDto> getAllPlayers() {
         return playerService.getAllPlayers();
     }
 
     @GetMapping("/{playerId}")
-    public Player getPlayerById(@PathVariable String playerId) {
+    public PlayerDto getPlayerById(@PathVariable String playerId) {
         return playerService.getPlayerById(playerId);
     }
 }
